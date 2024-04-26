@@ -11,7 +11,7 @@ export default async function FullPageImgView({ imgId }: FullPageImgViewProps) {
       <div className="flex flex-shrink items-center justify-center">
         <img src={image.url} alt={image.name} className="object-contain" />
       </div>
-      <div className="flex w-48 flex-shrink-0 flex-col border-l">
+      <div className="flex w-48 flex-shrink-0 flex-col border-l bg-black">
         <div className="text-xl font-bold">{image.name}</div>
       </div>
     </div>
