@@ -1,17 +1,15 @@
 import { stringToNumber } from "~/app/utils/numbers";
-import { getImage } from "~/server/queries";
+import { Modal } from "./modal";
+import FullPageImgView from "~/components/full-page-img-view";
 
 interface ImgModalProps {
   params: { id: string };
 }
 
-export default async function ImgModal({
-  params: { id: imgId },
-}: ImgModalProps) {
-  const image = await getImage(stringToNumber(imgId));
+export default function ImgModal({ params: { id: imgId } }: ImgModalProps) {
   return (
-    <div>
-      <img src={image.url} alt={image.name} className="w-96" />
-    </div>
+    <Modal>
+      <FullPageImgView imgId={stringToNumber(imgId)} />
+    </Modal>
   );
 }
